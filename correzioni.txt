@@ -1,0 +1,25 @@
+import datetime
+ def assistente_virtuale(comando):
+    if comando == "Qual è la data di oggi?":
+        oggi = datetime.datetoday()                                     -datetoday non é un reale comando della libreria datetime, andrebbe usato datetime.date.today()
+          risposta = "La data di oggi è " + oggi.strftime("%d/%m/%Y")   
+    elif comando == "Che ore sono?":
+        ora_attuale = datetime.datetime.now().time()                    
+          risposta = "L'ora attuale è " + ora_attuale.strftime("%H:%M") 
+    elif comando == "Come ti chiami?":
+        risposta = "Mi chiamo Assistente Virtuale"                     
+    else:
+        risposta = "Non ho capito la tua domanda."                      
+      return risposta                                                   
+ while True                                                             -manca ":" che chiude la stringa dopo il True
+    comando_utente = input("Cosa vuoi sapere? ")
+    if comando_utente.lower() == "esci":
+        print("Arrivederci!")
+        break
+    else:
+        print(assistente_virtuale(comando_utente))                      
+
+
+oltre a questi errorucci, il programma, commettendo un errore di logica, non tiene conto della possibilità che l'utente non scrivi la frase esattamente nel modo identico a come chiede lui, non rendendo nemmeno noto all'utente il modo in cui vanno scritte, rendendo la user experience pessima.
+La mia soluzione preferita per ovviare a questo problema sarebbe renderlo una vera e propria lista di opzioni giá rese note all'utente, allego la correzione fatta.
+import datetime  def assistente_virtuale(comando):     if comando == "Qual è la data di oggi?":         oggi = datetime.datetoday()                                     -datetoday non é un reale comando della libreria datetime, andrebbe usato datetime.date.today()           risposta = "La data di oggi è " + oggi.strftime("%d/%m/%Y")        elif comando == "Che ore sono?":         ora_attuale = datetime.datetime.now().time()                               risposta = "L'ora attuale è " + ora_attuale.strftime("%H:%M")      elif comando == "Come ti chiami?":         risposta = "Mi chiamo Assistente Virtuale"                          else:         risposta = "Non ho capito la tua domanda."                             return risposta                                                     while True                                                             -manca ":" che chiude la stringa dopo il True     comando_utente = input("Cosa vuoi sapere? ")     if comando_utente.lower() == "esci":         print("Arrivederci!")         break     else:         print(assistente_virtuale(comando_utente))                         oltre a questi errorucci, il programma, commettendo un errore di logica, non tiene conto della possibilità che l'utente non scrivi la frase esattamente nel modo identico a come chiede lui, non rendendo nemmeno noto all'utente il modo in cui vanno scritte, rendendo la user experience pessima. La mia soluzione preferita per ovviare a questo problema sarebbe renderlo una vera e propria lista di opzioni giá rese note all'utente, allego la correzione fatta.import datetime  def assistente_virtuale(comando):     if comando == "Qual è la data di oggi?":         oggi = datetime.datetoday()                                     -datetoday non é un reale comando della libreria datetime, andrebbe usato datetime.date.today()           risposta = "La data di oggi è " + oggi.strftime("%d/%m/%Y")        elif comando == "Che ore sono?":         ora_attuale = datetime.datetime.now().time()                               risposta = "L'ora attuale è " + ora_attuale.strftime("%H:%M")      elif comando == "Come ti chiami?":         risposta = "Mi chiamo Assistente Virtuale"                          else:         risposta = "Non ho capito la tua domanda."                             return risposta                                                     while True                                                             -manca ":" che chiude la stringa dopo il True     comando_utente = input("Cosa vuoi sapere? ")     if comando_utente.lower() == "esci":         print("Arrivederci!")         break     else:         print(assistente_virtuale(comando_utente))                         oltre a questi errorucci, il programma, commettendo un errore di logica, non tiene conto della possibilità che l'utente non scrivi la frase esattamente nel modo identico a come chiede lui, non rendendo nemmeno noto all'utente il modo in cui vanno scritte, rendendo la user experience pessima. La mia soluzione preferita per ovviare a questo problema sarebbe renderlo una vera e propria lista di opzioni giá rese note all'utente, allego la correzione fatta.
